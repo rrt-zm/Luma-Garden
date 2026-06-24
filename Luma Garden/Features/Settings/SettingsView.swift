@@ -148,7 +148,7 @@ struct SettingsView: View {
                 Text("A meditative garden grown from light. Connect, bloom, and let it glow — entirely offline, at your own pace.")
                     .font(LumaFont.body(13)).foregroundStyle(luma.textSoft)
                     .multilineTextAlignment(.center)
-                Text("Version 1.0").font(LumaFont.mono(11)).foregroundStyle(luma.textFaint)
+                Text("Version 1.1").font(LumaFont.mono(11)).foregroundStyle(luma.textFaint)
             }
             .frame(maxWidth: .infinity)
             .padding(18)
