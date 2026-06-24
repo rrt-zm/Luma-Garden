@@ -7,7 +7,7 @@ struct LumaGardenApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            LaunchRouterView()
                 .environment(container.store)
                 .preferredColorScheme(colorScheme)
                 .statusBarHidden(true)

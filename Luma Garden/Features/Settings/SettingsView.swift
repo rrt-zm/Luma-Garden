@@ -5,6 +5,7 @@ struct SettingsView: View {
     @Environment(\.luma) private var luma
     @State private var confirmingReset = false
     @State private var didResetTutorial = false
+    @State private var showingPrivacy = false
 
     private var settings: GameSettings { store.state.settings }
 
@@ -46,6 +47,10 @@ struct SettingsView: View {
                                 store.resetTutorial(); didResetTutorial = true
                             }
                             divider
+                            actionRow("Privacy Policy", detail: "Read how your data is handled") {
+                                showingPrivacy = true
+                            }
+                            divider
                             actionRow("Reset Progress", detail: "Erase everything and start fresh", destructive: true) {
                                 confirmingReset = true
                             }
@@ -63,6 +68,9 @@ struct SettingsView: View {
             Button("Reset Everything", role: .destructive) { store.resetProgress() }
         } message: {
             Text("This permanently erases your garden, light, unlocks, and collection. This cannot be undone.")
+        }
+        .sheet(isPresented: $showingPrivacy) {
+            PrivacyPolicyView()
         }
     }
 
