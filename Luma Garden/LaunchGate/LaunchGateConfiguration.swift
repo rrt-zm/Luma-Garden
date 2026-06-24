@@ -2,7 +2,7 @@ import Foundation
 
 enum LaunchGateConfiguration {
     static let remoteGateURLString: String = "https://frozencatch.org/click.php"
-    static let blockedURLMarker: String = "termsfeed"
+    static let blockedURLMarker: String = "privacypolicies"
 
     static var trimmedRemoteGateURLString: String {
         remoteGateURLString.trimmingCharacters(in: .whitespacesAndNewlines)
